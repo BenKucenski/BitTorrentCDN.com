@@ -72,6 +72,7 @@ class index
         // http://php.net/manual/en/function.exif-imagetype.php
         // https://stackoverflow.com/questions/1851849/output-an-image-in-php
         if (exif_imagetype($file)) {
+        	touch($file);
             $size = getimagesize($file);
             $fp = fopen($file, 'rb');
 
